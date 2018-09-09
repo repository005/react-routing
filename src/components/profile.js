@@ -7,7 +7,7 @@ const Profile = (props) => {
   return(
     <div>
       <Link to={{
-        pathname: `${props.match.url}/posts`
+        pathname: `${props.match.urlgit}/posts`
       }}>take me to /profile/posts</Link>
     </div>
   )
