@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {BrowserRouter, Route, Link, Switch} from 'react-router-dom';
+import {BrowserRouter, Route, NavLink, Switch} from 'react-router-dom';
 
 import Home from './components/home';
 import Posts from './components/posts';
@@ -12,17 +12,18 @@ const App = () => {
     <BrowserRouter>
       <div>
         <header>
-          <Link to="/">Home</Link><br/>
-          <Link to="/posts">Posts</Link><br/>
-          <Link to={{
+          <NavLink to="/">Home</NavLink><br/>
+          <NavLink activeStyle={{color: 'red'}} to="/posts">Posts</NavLink><br/>
+          <NavLink to={{
             pathname: "/profile"
-          }}>Profile</Link>
+          }} activeStyle={{color: 'red'}}>Profile</NavLink>
         </header>
         <Switch>
-          <Route path="/posts"  component={Posts}/>
           <Route path="/posts/:id/:username" component={PostItem}/>
           <Route path="/profile" component={Profile}/>
-          <Route path="/"  component={Home}/>
+          <Route path="/posts"  component={Posts}/>
+          <Route path="/" exact  component={Home}/>
+          <Route render={()=> <h3>Oops... 404 error</h3>}/>
         </Switch>
       </div>
     </BrowserRouter>
