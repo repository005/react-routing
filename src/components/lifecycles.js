@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
 
-class Life extends React.Component {
+class Life extends PureComponent {
   //1 get default props
 
   
@@ -11,36 +11,44 @@ class Life extends React.Component {
   }
 
   //3 before rendering
-  componentWillMount() {
-    console.log('3 before render');
-  }
+  // componentWillMount() {
+  //   console.log('3 before render');
+  // }
 
-  componentWillUpdate() {
-    console.log('before update');
+  // componentWillUpdate() {
+  //   console.log('before update');
     
-  }
+  // }
 
-  componentDidUpdate() {
-    console.log('after update');
-  }
+  // componentDidUpdate() {
+  //   console.log('after update');
+  // }
 
-  shouldComponentUpdate(nextProps, nextState) {
+  // shouldComponentUpdate(nextProps, nextState) {
 
-    if(nextState.title === 'something else') {
-      return false;
-    }
+  //   if(nextState.title === this.state.title) {
+  //     return false;
+  //   }
     
-    return true;
-  }
+  //   return true;
+  // }
 
-  componentWillReceiveProps() {
-    console.log('BEFORE RECEIVE PROPS');
+  // componentWillReceiveProps() {
+  //   console.log('BEFORE RECEIVE PROPS');
     
-  }
+  // }
 
-  componentWillUnmount() {
-    console.log('UNMOUNT');
-  }
+  // componentWillUnmount() {
+  //   console.log('UNMOUNT');
+  // }
+
+  //5 after render jsx
+  // componentDidMount() {
+  //   console.log('5 after render');
+    
+  //   document.querySelector('h3').style.color = 'red';
+  // }
+
   //4 render jsx
   render() {
 
@@ -51,18 +59,11 @@ class Life extends React.Component {
         <h3>{this.state.title}</h3>
         <div onClick={
           ()=> this.setState({
-            title: 'something elsee'
+            title: 'something else'
           })}
           >CLICK TO CHANGE</div>
       </div>
     )
-  }
-
-  //5 after render jsx
-  componentDidMount() {
-    console.log('5 after render');
-    
-    document.querySelector('h3').style.color = 'red';
   }
 }
 
