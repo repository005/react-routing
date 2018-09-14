@@ -8,6 +8,7 @@ import Posts from './components/posts';
 import Profile from './components/profile';
 import PostItem from './components/post-item';
 import Life from './components/lifecycles';
+import User from './components/user';
 
 const App = () => {
   return (
@@ -19,7 +20,8 @@ const App = () => {
           <NavLink to={{
             pathname: "/profile"
           }} activeStyle={{color: 'red'}}>Profile</NavLink><br/>
-          <NavLink  activeStyle={{color: 'red'}} to="/life">Life</NavLink>
+          <NavLink  activeStyle={{color: 'red'}} to="/life">Life</NavLink><br/>
+          <NavLink  activeStyle={{color: 'red'}} to="/user">User</NavLink>
         </header>
         <Switch>
           <Route path="/posts/:id/:username" component={PostItem}/>
@@ -27,6 +29,7 @@ const App = () => {
           <Route path="/profile" component={Profile}/>
           <Route path="/posts"  component={Posts}/>
           <Route path="/life"  component={Life}/>
+          <Route path="/user"  component={User}/>
           <Route path="/" exact  component={Home}/>
           <Route render={()=> <h3>Oops... 404 error</h3>}/>
         </Switch>
