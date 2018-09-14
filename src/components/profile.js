@@ -7,14 +7,13 @@ const Profile = (props) => {
 
   // const redir = () => {
   //   props.history.push('/')
-  // }
+  // }  
 
   return(
     <div>
       <Link to={{
         pathname: `${props.match.urlgit}/posts`
       }}>take me to /profile/posts</Link>
-      {/* {redir()} */}
     </div>
     
   )
