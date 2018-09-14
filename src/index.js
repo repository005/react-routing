@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {BrowserRouter, Route, NavLink, Switch} from 'react-router-dom';
 
+
 import Home from './components/home';
 import Posts from './components/posts';
 import Profile from './components/profile';
@@ -22,6 +23,7 @@ const App = () => {
         </header>
         <Switch>
           <Route path="/posts/:id/:username" component={PostItem}/>
+          <Route path="/posts"  component={Posts}/>
           <Route path="/profile" component={Profile}/>
           <Route path="/posts"  component={Posts}/>
           <Route path="/life"  component={Life}/>
