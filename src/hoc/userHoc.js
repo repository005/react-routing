@@ -6,7 +6,7 @@ const userHoc = (WrappedComponent, arg1) => {
     
     <div>
       {console.log(props)}
-     {arg1 + ' '} <WrappedComponent/>
+     {arg1 + ' '} <WrappedComponent {...props} />
     </div>
   )
 

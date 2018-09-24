@@ -1,7 +1,7 @@
 import React from 'react';
 
 const PostItem = (props) => {
-  console.log(props.match.params.username);
+  console.log(props);
   
   return(
     <div>
